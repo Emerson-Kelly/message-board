@@ -1,11 +1,11 @@
 import express from 'express';
 const router = express.Router();
 
-const messages = [
-];
+let messageId = 0;
+const messages = new Map();
 
 router.get('/', (req, res) => {
-  res.render('pages/index', { messages });
+  res.render('pages/index', { messages: Array.from(messages.values()) });
 });
 
 router.get('/new', (req, res) => {
@@ -13,14 +13,17 @@ router.get('/new', (req, res) => {
 });
 
 router.post('/new', (req, res) => {
- const { nameInput, messageInput } = req.body;
-  console.log("Form Data:", req.body);
-  messages.push({
+  const { nameInput, messageInput } = req.body;
+  const newMessage = {
+    id: messageId,
     text: messageInput,
     user: nameInput,
     added: new Date()
-  });
+  };
+  messages.set(messageId, newMessage);
+  messageId++;
   res.redirect('/');
 });
 
+export { messages };
 export { router as indexRouter };

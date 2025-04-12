@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
 import { messageRouter } from './routes/new.js';
 import { indexRouter } from './routes/index.js';
+import { detailsRouter } from './routes/details.js';
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/new', messageRouter);
+app.use('/', detailsRouter);
 
 app.listen(3000, () => {
   console.log('Server running on http://localhost:3000');
