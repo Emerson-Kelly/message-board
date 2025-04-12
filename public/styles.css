@@ -1,0 +1,65 @@
+body {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.sticky-note {
+    background: #fffb9166;
+    /* yellow note paper */
+    border: 1px solid #e2d93b;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 8%);
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 20em;
+    height: 20em;
+    word-wrap: break-word;
+    word-break: break-word;
+    position: relative;
+}
+
+.sticky-note::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;     /* Number of lines before cutting off */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.sticky-note ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sticky-note a {
+    text-decoration: none;
+    color: #0066cc;
+    float: right;
+}
+
+.sticky-note a:hover {
+    text-decoration: underline;
+}
