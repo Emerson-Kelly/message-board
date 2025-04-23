@@ -16,13 +16,13 @@
 
         <h1>Message Details:</h1>
         <p><strong>User:</strong>
-            <%= message.user %>
+            <%= message.username %>
         </p>
         <p><strong>Message:</strong>
-            <%= message.text %>
+            <%= message.message %>
         </p>
         <p><strong>Added:</strong>
-            <%= message.added.toLocaleString() %>
+            <%= message.created_at.toLocaleString() %>
         </p>
         <a href="/">&#8592; Home</a>
     </div>
