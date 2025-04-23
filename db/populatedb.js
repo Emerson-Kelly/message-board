@@ -24,7 +24,7 @@ async function main() {
   console.log("Seeding database...");
 
   const client = new Client({
-    connectionString: 'postgresql://emersonkelly:%40Elrkelrk4945@localhost:5432/message_board_users',
+    connectionString: process.env.DATABASE_URL,
   });
 
   await client.connect();
