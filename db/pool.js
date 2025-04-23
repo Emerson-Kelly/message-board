@@ -13,6 +13,7 @@ const pool = new Pool({
   database: process.env.DATABASE_NAME,
   password: process.env.DATABASE_PASSWORD,
   port: process.env.DATABASE_PORT,
+  connectionString: process.env.DATABASE_URL,
 });
 
 export default pool;
