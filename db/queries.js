@@ -1,18 +1,5 @@
 import pool from "./pool.js";
 
-// CREATE POOL QUERIES FOR THE ROUTES (SINCE CONTROLLERS AREN'T BEING USED IN THIS PROJECT)
-//KEEP THE MESSAGES ARRAY FOR NOW
-
-/*
-List of relations
-Schema |       Name       |   Type   |    Owner     
---------+------------------+----------+--------------
-public | messages         | table    | emersonkelly
-public | messages_id_seq  | sequence | emersonkelly
-public | usernames        | table    | emersonkelly
-public | usernames_id_seq | sequence | emersonkelly
-*/
-
 export async function getAllUsers() {
     const { rows } = await pool.query(`
     SELECT
