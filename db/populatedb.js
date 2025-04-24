@@ -21,17 +21,17 @@ const SQL = `
 `;
 
 async function main() {
-    console.log("Seeding database...");
-  
-    try {
-      await pool.query(SQL);
-    } catch (err) {
-      console.error('Error executing query', err.stack);
-    } finally {
-      await pool.end();
-      console.log("done");
-    }
-  }
+  console.log("Seeding database...");
+
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+  });
+
+  await client.connect();
+  await client.query(SQL);
+  await client.end();
+  console.log("done");
+}
 
 main();
 

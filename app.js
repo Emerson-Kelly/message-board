@@ -19,7 +19,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
-app.use('/new', messageRouter);
+app.use('/', messageRouter);
 app.use('/', detailsRouter);
 
 const PORT = process.env.PORT || 3000;
