@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 import clientPkg from 'pg';
 const { Client } = clientPkg;
 
